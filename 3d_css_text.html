@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html><html><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>3D CSS Text Generator</title>
+<meta name="description" content="The 3D CSS Text Generator creates 3D Text and Icons using only CSS." />
+<meta name="keywords" content="3D CSS Text Generator" />
+<link type="text/css" href="style.css" rel="stylesheet" />
+<script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.7.custom.min.js"></script>
+<link rel="stylesheet" href="colorpicker.css" type="text/css" />
+<script type="text/javascript" src="colorpicker.js"></script>
+<link type="text/css" href="jquery-ui-1.8.7.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="init.js"></script>
+</head><body><div id="wrapper"><div id="gradient"></div><div id="editor">
+<h1 contenteditable="true" class="3DText hide">3D CSS Text</h1>
+</div><div id="tagline">
+<h2> The 3D CSS text generator uses the sensational power of text-shadow to create thrilling<br/> text and icons that almost reach out and grab you through the magic of The 3rd Dimension! </h2>
+<h3>Works in the latest builds of Firefox, Chrome, Safari, Opera and now IE10!</h3>
+<h2>Highlight the text to edit.</h2></div>
+<div class="throbber"></div>
+<div id="controls" >
+<div class="handle move" ><a name="move" class="move iconic"></a></div>
+<div class="handle collapser minimize"><a name="minus" class="iconic" title="minimize">-</a></div>
+<div class="handle reset hilighted"><a name="spin" class="spin iconic" title="reset"></a></div>
+<span class="hide" id="resetMessage">Reset</span>
+<div id="controlsInner" >
+<div id="controlsInner2" >
+<div class="control floatLeft">
+<label for="font">: Font :</label>
+<br/>
+<select style="width:100px;" id="font">
+<optgroup label="Web Safe Fonts">
+<option value="1">Arial</option>
+<option value="2">Arial Black</option>
+<option value="3">Bookman</option>
+<option value="4">Comic Sans</option>
+<option value="5">Courier</option>
+<option value="6">Garamond</option>
+<option value="7">Geneva</option>
+<option value="8">Georgia</option>
+<option selected="selected" value="9">Helvetica</option>
+<option value="10">Tahoma</option>
+<option value="11">Times</option>
+<option value="12">Verdana</option>
+</optgroup>
+<optgroup label="Icons">
+<option value="0">Iconic Icons</option>
+</optgroup></select><br/>
+<input type="checkbox" id="check1" checked="yes" />
+<label for="check1">B</label>
+<input type="checkbox" id="check2" />
+<label for="check2">I</label>
+<input type="checkbox" id="check3" />
+<label for="check3">U</label>
+</div>
+<div class="control floatLeft" style="margin-left:25px;text-align:center;">
+<label for="Text Color">: Text Color :</label>
+<br/>
+<div id="colorpicker" class="colorpickler">
+<div id="colorInner" class="colorInner"><div class="colorGradientOverlay"></div></div>
+</div></div>
+<div class="control floatLeft" style="margin-left:25px;text-align:center;">
+<label for="Background Color">: Bg Color :</label>
+<br/>
+<div id="colorpicker2" class="colorpickler" >
+<div id="colorInner2" class="colorInner"></div>
+</div></div>
+<div class="control floatLeft" style="margin-left:25px;">
+<label for="Angle" style="text-align:left;">: Angle :</label>
+<br/>
+<select id="angle">
+<option value="0">0&deg;</option>
+<option value="45">45&deg;</option>
+<option value="90">90&deg;</option>
+<option value="135">135&deg;</option>
+<option value="180">180&deg;</option>
+<option value="225">225&deg;</option>
+<option value="270">270&deg;</option>
+<option value="315"selected>315&deg;</option>
+<option value="360">360&deg;</option>
+</select></div>
+<div class="control clear">
+<label for="fontSize">.:: Size ::.</label>
+<input type="hidden" name="fontSize" id="fontSize" value="141">
+<input type="hidden" name="fontPadding" id="fontPadding" value="0">
+<input type="hidden" name="fontColor" id="fontColor" value="#fff9d6">
+<input type="hidden" name="backgroundColor" id="backgroundColor" value="#224d7a">
+<div id="fontSizeSlider"></div>
+</div>
+<div class="control">
+<label for="height">.:: Height ::.</label>
+<input type="hidden" name="height" id="height" value="6">
+<!--<br/>This is the height of the letters. Use a positive integer.. best results between 1 and 20 or so right now.</p>-->
+<div id="fontHeightSlider"></div>
+</div>
+<div class="control">
+<label for="heightGradientMin">.:: Height Gradient ::.</label>
+<input type="hidden" name="heightGradientMin" id="heightGradientMin" value="10">
+<input type="hidden" name="heightGradientMax" id="heightGradientMax" value="87">
+<div id="heightGradientSlider"></div>
+</div>
+<div class="control">
+<label for="height">.:: Shadow Opacity ::.</label>
+:
+</label>
+<input type="hidden" name="shadowOpacity" id="shadowOpacity" value=".6">
+<div id="shadowOpacitySlider"></div>
+</div>
+<div class="control center"> </div>
+<div class="control">
+<label for="code">.:: Your Generated Code ::.</label>
+<p id="fontMessage">Important! You'll need to <a href="http://somerandomdude.com/projects/iconic/" target="_new">download the Iconic Font</a> by PJ Onori in order to use it. It is available under a Creative Commons license.Follow the example in the download package to implement.</p>
+<div id="code"><code>/* Apply this class to some text to add 3d text effect! */<br/>.3DText {<br/>font-family:<span class="fontFamily"></span>;<br/>line-height:1em;<br/>color:<span class="fontColor"></span>;<br/><span class="fontStyles"><span class="fontWeight"></span><span class="fontStyle"></span><span class="textDecoration"></span></span>font-size:<span class="fontSize"></span>;<br/>text-shadow:<span class="code"></span>;}<br/><br/><span style="display:none">/* The background color for the body */<br/>body {<br/>background-color:#454545;}<br/><br/>/* This class can be applied to a div to achieve the light gradient effect on this page. A height will have to be applied to your page specifications */<br/>.gradient{<br/>position:absolute;<br/>background-image:-moz-radial-gradient(135deg, #000, #333 100%);<br/>background:-webkit-gradient(radial, 40% 0%, 0% 100%, from(#333), to(#000000));<br/>opacity:.3;<br/>width:100%;<br/>z-index:-1;}<br/></span></code>
+</div></div></p><br/></div></div></p></div>
+</div></body></html>
