@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+$(document).ready(function () {
 
     //set margin of absolutely positioned controls to be half of the window width 
     windowWidth = $(window).width();
@@ -124,10 +124,10 @@
 		
 		/*colors*/
         $('#colorInner').ColorPickerSetColor('#ffffff').css('background-color', '#ffffff');
-        $('#colorInner2').ColorPickerSetColor('#ad0303').css('background-color', '#ad0303');
+        $('#colorInner2').ColorPickerSetColor('#3b73ff').css('background-color', '#3b73ff');
         $('#fontColor').val('#ffffff');
-        $('#backgroundColor').val('#ad0303');
-        $('body').css('background-color', '#ad0303');
+        $('#backgroundColor').val('#3b73ff');
+        $('body').css('background-color', '#3b73ff');
         $('.3DText').css('color', '#ffffff');
         $('.3DText').css('font-size', '124px');
         $('.3DText').css('paddingBottom', '0px');
