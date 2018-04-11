@@ -124,10 +124,10 @@ $(document).ready(function () {
 		
 		/*colors*/
         $('#colorInner').ColorPickerSetColor('#ffffff').css('background-color', '#ffffff');
-        $('#colorInner2').ColorPickerSetColor('#3b73ff').css('background-color', '#3b73ff');
+        $('#colorInner2').ColorPickerSetColor('#2fcb53').css('background-color', '#2fcb53');
         $('#fontColor').val('#ffffff');
-        $('#backgroundColor').val('#3b73ff');
-        $('body').css('background-color', '#3b73ff');
+        $('#backgroundColor').val('#2fcb53');
+        $('body').css('background-color', '#2fcb53');
         $('.3DText').css('color', '#ffffff');
         $('.3DText').css('font-size', '124px');
         $('.3DText').css('paddingBottom', '0px');
